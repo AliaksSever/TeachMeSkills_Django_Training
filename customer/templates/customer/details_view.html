@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+Customers details
+{% endblock %}
+
+
+{% block content %}
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="features">
+                    <h1>{{ customer.firstname }}</h1>
+                    <p>Lastname: {{ customer.lastname }}</p>
+                    <p>Age: {{ customer.age }}</p>
+                    <p>Profession: {{ customer.profession }}</p>
+                    <a href="{% url 'customer-delete' customer.id %}" class="btn btn-danger">Delete</a>
+                    <a href="{% url 'customer-update' customer.id %}" class="btn btn-info">Update</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+Delete customer
+{% endblock %}
+
+
+{% block content %}
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                <div class="features">
+                    <h1>Delete customer</h1>
+                    <form method="post">
+                        {% csrf_token %}
+                        <button class="btn btn-success" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+Create new customer
+{% endblock %}
+
+
+{% block content %}
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                <div class="features">
+                    <h1>New customer form</h1>
+                    <form method="post">
+                        {% csrf_token %}
+
+                        {{ form.firstname }}<br>
+                        {{ form.lastname }}<br>
+                        {{ form.age }}<br>
+                        {{ form.profession }}<br>
+                        <span>{{ error }}</span>
+                        <button class="btn btn-success" type="submit">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
